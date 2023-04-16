@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-public class PS_Business {
+public class PSH_Business {
     private Map<String, String> mapType;
     private Map<String, String> userNamePasswordMap;
-    public PS_Business(String uname,String pwd){
+    public PSH_Business(String uname,String pwd){
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
         userNamePasswordMap.put(uname, pwd);
@@ -34,7 +34,7 @@ public class PS_Business {
         }
         return null;
     }
-    public static PS_Business createSystemAdmin() {
-        return new PS_Business("admin", "admin");
+    public static PSH_Business createSystemAdmin() {
+        return new PSH_Business("admin", "admin");
     }
 }

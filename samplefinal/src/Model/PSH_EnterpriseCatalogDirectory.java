@@ -58,75 +58,75 @@ public class PSH_EnterpriseCatalogDirectory {
 
     
 
-//    public void addTheatre(String name, String contact) {
-//        PSH_EnterCatag_Theatre theatre = new PSH_EnterCatag_Theatre(name, contact);
-//        listOfTheatre.add(theatre);
-//    }
-//
-//    public void addCatering(String name, String contact) {
-//        PSH_EnterCatag_Hotel catering = new PSH_EnterCatag_Hotel(name, contact);
-//        listOfCatering.add(catering);
-//    }
-//
-//    public void addEvents(String name, String contact) {
-//        PSH_EnterCatag_Hotel event = new PSH_EnterCatag_Hotel(name, contact);
-//        listOfEvents.add(event);
-//    }
-//
-//    public void addResort(String name, String contact) {
-//        PSH_EnterCatag_Hotel resort = new PSH_EnterCatag_Hotel(name, contact);
-//        listOfResort.add(resort);
-//    }
-//
-//    public PSH_EnterCatag_Hotel findResort(String resortName) {
-//        for (PSH_EnterCatag_Hotel resort : listOfResort) {
-//            if (resort.getName().equals(resortName)) {
-//                return resort;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public PSH_EnterCatag_Hotel findEntertainment(String entertainmentName) {
-//        for (PSH_EnterCatag_Hotel entr : listOfEntertainment) {
-//            if (entr.getName().equals(entertainmentName)) {
-//                return entr;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public PSH_EnterCatag_Hotel findCatering(String name) {
-//        for (PSH_EnterCatag_Hotel entertainment : listOfCatering) {
-//            if (entertainment.getName().equals(name)) {
-//                return entertainment;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public PSH_EnterCatag_Hotel findEvents(String name) {
-//        for (PSH_EnterCatag_Hotel event : listOfEvents) {
-//            if (event.getName().equals(name)) {
-//                return event;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public void deleteBusinessCatalogueEvents(PSH_EnterCatag_Celebration event) {
-//        listOfCelebrations.remove(event);
-//    }
-//
-//    public void deleteBusinessCatalogueEntertainment(PSH_EnterCatag_Theatre Entertainment) {
-//        listOfEntertainment.remove(Entertainment);
-//    }
-//
-//    public void deleteBusinessCatalogueCatering(PSH_EnterCatag_Restaurant cater) {
-//        listOfCatering.remove(cater);
-//    }
-//
-//    public void deleteBusinessCatalogueResort(PSH_EnterCatag_Hotel resort) {
-//        listOfResort.remove(resort);
-//    }
+    public void addTheatre(String name, String contact) {
+        PSH_EnterCatag_Theatre theatre = new PSH_EnterCatag_Theatre(name, contact);
+        listOfTheatre.add(theatre);
+    }
+
+    public void addRestaurant(String name, String contact) {
+        PSH_EnterCatag_Restaurant cres = new PSH_EnterCatag_Restaurant(name, contact);
+        listOfRestaurants.add(cres);
+    }
+
+    public void addCelebration(String name, String contact) {
+        PSH_EnterCatag_Celebration celeb = new PSH_EnterCatag_Celebration(name, contact);
+        listOfCelebrations.add(celeb);
+    }
+
+    public void addHotel(String name, String contact) {
+        PSH_EnterCatag_Hotel hotel = new PSH_EnterCatag_Hotel(name, contact);
+        listOfHotels.add(hotel);
+    }
+
+    public PSH_EnterCatag_Hotel findHotel(String resortName) {
+        for (PSH_EnterCatag_Hotel resort : listOfHotels) {
+            if (resort.getName().equals(resortName)) {
+                return resort;
+            }
+        }
+        return null;
+    }
+
+    public PSH_EnterCatag_Theatre findTheatre(String entertainmentName) {
+        for (PSH_EnterCatag_Theatre entr : listOfTheatre) {
+            if (entr.getName().equals(entertainmentName)) {
+                return entr;
+            }
+        }
+        return null;
+    }
+
+    public PSH_EnterCatag_Restaurant findRestaurant(String name) {
+        for (PSH_EnterCatag_Restaurant res : listOfRestaurants) {
+            if (res.getName().equals(name)) {
+                return res;
+            }
+        }
+        return null;
+    }
+
+    public PSH_EnterCatag_Celebration findCelebration(String name) {
+        for (PSH_EnterCatag_Celebration celeb : listOfCelebrations) {
+            if (celeb.getName().equals(name)) {
+                return celeb;
+            }
+        }
+        return null;
+    }
+
+    public void deleteBusinessCatalogueCelebration(PSH_EnterCatag_Celebration celeb) {
+        listOfCelebrations.remove(celeb);
+    }
+
+    public void deleteBusinessCatalogueTheatre(PSH_EnterCatag_Theatre Entertainment) {
+        listOfTheatre.remove(Entertainment);
+    }
+
+    public void deleteBusinessCatalogueCatering(PSH_EnterCatag_Restaurant res) {
+        listOfRestaurants.remove(res);
+    }
+
+    public void deleteBusinessCatalogueResort(PSH_EnterCatag_Hotel resort) {
+        listOfHotels.remove(resort);
+    }
 }

@@ -206,7 +206,7 @@ public class PSH_HotelManagerOrgJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(lblsysadmin)
-                .addContainerGap(549, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()

@@ -4,17 +4,45 @@
  */
 package UI.HotelManagerRole;
 
+import Model.PSH_Business;
+import Model.PSH_Customer;
+import Model.PSH_CustomerDirectory;
+import Model.PSH_EnterCatag_Hotel;
+import Model.PSH_Organization;
+import Model.PSH_RoomBooking;
+import Model.PSH_SafariOrg;
+import Model.PSH_TourGuideOrg;
+import Model.PSH_location;
+import PSH_Model.EnterpriseServices.PSH_EnterCatagService;
+import PSH_Model.EnterpriseServices.PSH_EnterCatag_HotelService;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_HotelDisplayOrdersJPanel extends javax.swing.JPanel {
 
+    private PSH_Business enterpriseAdmin;
+    private Runnable callOnCreateMethod;
+    private String type;
+    private String user;
+    private PSH_EnterCatag_Hotel hotel;
     /**
      * Creates new form PSH_HotelDisplayOrdersJPanel
      */
-    public PSH_HotelDisplayOrdersJPanel() {
+    public PSH_HotelDisplayOrdersJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, String user, String type, PSH_EnterCatag_Hotel hotel) {
         initComponents();
+        this.enterpriseAdmin=enterpriseAdmin;
+        this.callOnCreateMethod=callOnCreateMethod;
+        this.hotel=hotel;
+        this.user = user;
+        this.type = type;
+        populateComboBox();
+        populateTable();
     }
 
     /**
@@ -26,19 +54,261 @@ public class PSH_HotelDisplayOrdersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        tourGuideOrg = new javax.swing.JComboBox();
+        carServiceOrg = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+        viewTask = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        backButton.setText("<==BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        jLabel3.setText("DISPLAY ORDER DETAILS FOR RESORT");
+
+        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ORDER ID", "CUSTOMER NAME", "STATUS", "TOUR GUIDE", "CAR SERVICES"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel1.setText("SELECT A TOUR GUIDE ORG");
+
+        tourGuideOrg.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        tourGuideOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tourGuideOrgActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel2.setText("SELECT A CAR SERVICE ORG");
+
+        viewTask.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        viewTask.setText("ASSIGN AND CONFIRM TASK");
+        viewTask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewTaskActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 864, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(61, 61, 61)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(tourGuideOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(carServiceOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(97, 97, 97))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(20, 20, 20))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(258, 258, 258)
+                                    .addComponent(viewTask))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(2, 2, 2)
+                                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(120, 120, 120)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(180, 180, 180)))
+                    .addContainerGap(62, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 608, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(38, 38, 38)
+                    .addComponent(backButton)
+                    .addGap(31, 31, 31)
+                    .addComponent(jLabel3)
+                    .addGap(18, 18, 18)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(49, 49, 49)
+                    .addComponent(jLabel1)
+                    .addGap(18, 18, 18)
+                    .addComponent(tourGuideOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(14, 14, 14)
+                    .addComponent(jLabel2)
+                    .addGap(18, 18, 18)
+                    .addComponent(carServiceOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(28, 28, 28)
+                    .addComponent(viewTask, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(43, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        callOnCreateMethod.run();
+    }//GEN-LAST:event_backButtonActionPerformed
 
+    private void tourGuideOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tourGuideOrgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tourGuideOrgActionPerformed
+
+    private void viewTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTaskActionPerformed
+        int selectedRowIndex = jTable1.getSelectedRow();
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a booking to assign tasks.");
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        PSH_RoomBooking booking = (PSH_RoomBooking) model.getValueAt(selectedRowIndex, 0);
+
+        PSH_EnterCatag_HotelService hotelService = null;
+        for (PSH_EnterCatagService service : booking.getServices()) {
+            if (hotel.getName().equals(service.getEnterpriseCatalog().getName())) {
+                hotelService = (PSH_EnterCatag_HotelService) service;
+                break;
+            }
+        }
+
+        if (hotelService == null) {
+            JOptionPane.showMessageDialog(this, "Cannot find hotel");
+            return;
+        }
+
+        if (!hotelService.getStatus().equals(PSH_EnterCatagService.Status.PENDING)) {
+            JOptionPane.showMessageDialog(this, String.format("Booking '%s' should be 'PENDING' state to be accepted.",
+                booking.getId()));
+        return;
+        }
+
+        PSH_TourGuideOrg tourGuide = (PSH_TourGuideOrg) tourGuideOrg.getSelectedItem();
+        PSH_SafariOrg carServices = (PSH_SafariOrg) carServiceOrg.getSelectedItem();
+
+        List<PSH_Organization> organizations = new ArrayList<>();
+        for (PSH_EnterCatag_HotelService.HotelServiceType type : hotelService.getHotelServices()) {
+            switch (type) {
+                case TOURGUIDE:
+                if (tourGuide == null) {
+                    JOptionPane.showMessageDialog(this, "Please select tour guide organization to be assinged for the booking.");
+                    return;
+                } else {
+                    organizations.add(tourGuide);
+                }
+                break;
+                case SAFARISERVICE:
+                if (carServices == null) {
+                    JOptionPane.showMessageDialog(this, "Please select car services organization to be assinged for the booking.");
+                    return;
+                } else {
+                    organizations.add(carServices);
+                }
+                break;
+            }
+        }
+
+        for (PSH_Organization organization : organizations) {
+            hotelService.addOrganization(organization);
+        }
+        hotelService.setStatus(PSH_EnterCatagService.Status.CONFIRMED);
+        JOptionPane.showMessageDialog(this, "Assigned all resort services to the booking: " + booking.getId());
+        populateTable();
+    }//GEN-LAST:event_viewTaskActionPerformed
+
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+
+        PSH_CustomerDirectory clientDirectory = enterpriseAdmin.getCustomerDirectory(); //get all customers
+        for (PSH_Customer client : clientDirectory.getListOfCustomer()) {
+            for (PSH_RoomBooking booking : client.getRoombookingList()) {      //get booking details each client
+                for (PSH_EnterCatagService service : booking.getServices()) {       //get services under booking
+                    System.out.println("Enterprise : " + service.getEnterpriseCatalog());
+                    if (hotel.getName().equals(service.getEnterpriseCatalog().getName())) {
+                        PSH_EnterCatag_HotelService hotelService = (PSH_EnterCatag_HotelService) service;
+
+                        Object row[] = new Object[10];
+                        row[0] = booking;
+                        row[1] = client;
+                        row[2] = hotelService.getStatus();
+                        row[3] = "NO";
+                        row[4] = "NO";
+
+                        for (PSH_EnterCatag_HotelService.HotelServiceType type : hotelService.getHotelServices()) {
+                            switch (type) {
+                                case TOURGUIDE:
+                                    row[3] = "YES";
+                                    break;
+                                case SAFARISERVICE:
+                                    row[4] = "YES";
+                                    break;
+                            }
+                        }
+                        model.addRow(row);
+                    }
+                }
+            }
+        }}
+    
+    private void populateComboBox() {
+        tourGuideOrg.addItem(null);
+        carServiceOrg.addItem(null);
+
+        for (PSH_TourGuideOrg tourGuide : hotel.getTourGuideORG()) {
+            if (tourGuide != null) {
+                tourGuideOrg.addItem(tourGuide);
+            }
+        }
+        for (PSH_SafariOrg safariServices : hotel.getSafariOrg()) {
+            if (safariServices != null) {
+                carServiceOrg.addItem(safariServices);
+            }
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JComboBox carServiceOrg;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JComboBox tourGuideOrg;
+    private javax.swing.JButton viewTask;
     // End of variables declaration//GEN-END:variables
 }

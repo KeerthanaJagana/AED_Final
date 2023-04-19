@@ -17,7 +17,7 @@ import main.DateUtilities;
 public class PSH_EnterCatag_HotelService extends PSH_EnterCatagService{
     public static enum HotelServiceType {
         TOURGUIDE(20),
-        SAFARI(20);
+        SAFARISERVICE(20);
 
         private final int price;
 

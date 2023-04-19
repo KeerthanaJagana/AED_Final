@@ -4,17 +4,31 @@
  */
 package UI.HotelManagerRole;
 
+import Model.PSH_Business;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_HotelMainJPanel extends javax.swing.JPanel {
 
+    private PSH_Business enterpriseAdmin;
+    private Runnable callMethod1;
+    private Runnable callMethod2;
+    private Runnable callMethod3;
+    private Runnable callMethod4;
+    
     /**
      * Creates new form PSH_HotelMainJPanel
      */
-    public PSH_HotelMainJPanel() {
+    public PSH_HotelMainJPanel(PSH_Business enterpriseAdmin, Runnable callMethod1, Runnable callMethod2, Runnable callMethod3, Runnable callMethod4) {
         initComponents();
+        this.enterpriseAdmin=enterpriseAdmin;
+        this.callMethod1 = callMethod1;
+        this.callMethod2 = callMethod2;
+        this.callMethod3 = callMethod3;
+        this.callMethod4 = callMethod4;
+        
     }
 
     /**
@@ -27,31 +41,41 @@ public class PSH_HotelMainJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        dashBtn = new javax.swing.JButton();
+        manageOrgBtn = new javax.swing.JButton();
+        orgAdBtn = new javax.swing.JButton();
+        manageHotelBtn = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         jLabel1.setText("Hotel Manager");
 
-        jButton1.setText("Dashboard");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        dashBtn.setText("Dashboard");
+        dashBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                dashBtnActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Manage Organization");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        manageOrgBtn.setText("Manage Organization");
+        manageOrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                manageOrgBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Organization Admin");
+        orgAdBtn.setText("Organization Admin");
+        orgAdBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orgAdBtnActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Manage Hotel");
+        manageHotelBtn.setText("Manage Hotel");
+        manageHotelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageHotelBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,14 +85,14 @@ public class PSH_HotelMainJPanel extends javax.swing.JPanel {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(orgAdBtn)
                         .addGap(130, 130, 130)
-                        .addComponent(jButton4)
+                        .addComponent(manageHotelBtn)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dashBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(manageOrgBtn)
                         .addGap(206, 206, 206))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(246, 246, 246)
@@ -82,30 +106,42 @@ public class PSH_HotelMainJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(dashBtn)
+                    .addComponent(manageOrgBtn))
                 .addGap(119, 119, 119)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(orgAdBtn)
+                    .addComponent(manageHotelBtn))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void dashBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        callMethod1.run();
+    }//GEN-LAST:event_dashBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void manageOrgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrgBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        callMethod2.run();
+    }//GEN-LAST:event_manageOrgBtnActionPerformed
+
+    private void orgAdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgAdBtnActionPerformed
+        // TODO add your handling code here:
+        callMethod3.run();
+    }//GEN-LAST:event_orgAdBtnActionPerformed
+
+    private void manageHotelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageHotelBtnActionPerformed
+        // TODO add your handling code here:
+        callMethod4.run();
+    }//GEN-LAST:event_manageHotelBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton dashBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton manageHotelBtn;
+    private javax.swing.JButton manageOrgBtn;
+    private javax.swing.JButton orgAdBtn;
     // End of variables declaration//GEN-END:variables
 }

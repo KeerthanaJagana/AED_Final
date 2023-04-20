@@ -46,6 +46,8 @@ public class PSH_HotelMainJPanel extends javax.swing.JPanel {
         orgAdBtn = new javax.swing.JButton();
         manageHotelBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         jLabel1.setText("Hotel Manager");
 

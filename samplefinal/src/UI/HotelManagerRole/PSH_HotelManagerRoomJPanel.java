@@ -63,6 +63,8 @@ public class PSH_HotelManagerRoomJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         roomTypeComboBox = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

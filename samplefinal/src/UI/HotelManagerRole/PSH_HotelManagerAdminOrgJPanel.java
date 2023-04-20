@@ -39,6 +39,7 @@ public class PSH_HotelManagerAdminOrgJPanel extends javax.swing.JPanel {
         this.location = location;
         networkName.setText(location.getName());
         populateTable();
+        
     }
 
     /**

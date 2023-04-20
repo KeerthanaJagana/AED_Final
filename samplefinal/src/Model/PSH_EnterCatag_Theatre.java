@@ -33,6 +33,46 @@ public class PSH_EnterCatag_Theatre extends PSH_EnterpriseCatalog{
         this.listOfManager = listOfManager;
     }
 
+    public List<PSH_Theatre_MagicianOrg> getListOfMagicians() {
+        return listOfMagicians;
+    }
+
+    public void setListOfMagicians(List<PSH_Theatre_MagicianOrg> listOfMagicians) {
+        this.listOfMagicians = listOfMagicians;
+    }
+
+    public List<PSH_Theatre_MusicBandOrg> getListOfMusicBand() {
+        return listOfMusicBand;
+    }
+
+    public void setListOfMusicBand(List<PSH_Theatre_MusicBandOrg> listOfMusicBand) {
+        this.listOfMusicBand = listOfMusicBand;
+    }
+
+    public List<PSH_Theatre_StandUpComedyOrg> getListOfComedians() {
+        return listOfComedians;
+    }
+
+    public void setListOfComedians(List<PSH_Theatre_StandUpComedyOrg> listOfComedians) {
+        this.listOfComedians = listOfComedians;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
    
 
     

@@ -65,6 +65,8 @@ public class PSH_HotelManagerOrgJPanel extends javax.swing.JPanel {
         cityNameTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         backButton.setText("<==BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -4,17 +4,39 @@
  */
 package UI.RestaurantManagerRole;
 
+import Model.PSH_Business;
+import Model.PSH_EnterCatag_Restaurant;
+import Model.PSH_EnterpriseCatalogDirectory;
+import Model.PSH_Manager;
+import Model.PSH_Restaurant_Menu;
+import Model.PSH_location;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_AddOrderJPanel extends javax.swing.JPanel {
 
+    private PSH_Business enterpriseAdmin;
+    private Runnable callOnCreateMethod;
+    private String type;
+    private String user;
+    private PSH_location location;
     /**
      * Creates new form PSH_AddOrderJPanel
      */
-    public PSH_AddOrderJPanel() {
+    public PSH_AddOrderJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, String user, String type, PSH_location location) {
         initComponents();
+        initComponents();
+        this.enterpriseAdmin = enterpriseAdmin;
+        this.callOnCreateMethod = callOnCreateMethod;
+        this.user = user;
+        this.type = type;
+        this.location = location;
+        populateMenu();
     }
 
     /**
@@ -26,19 +48,184 @@ public class PSH_AddOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        addBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        menuField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        priceField = new javax.swing.JTextField();
+
+        backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        backButton.setText("<==BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        jLabel4.setText("MENU ITEM LIST");
+
+        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "MENU ITEM DETAILS", "PRICE"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        addBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        addBtn.setText("ADD");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel1.setText("ADD AN ITEM ");
+
+        menuField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel3.setText("PRICE ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(180, 180, 180)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(menuField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117)
+                        .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(335, 335, 335)
+                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(120, 144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(backButton)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addBtn)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(237, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        callOnCreateMethod.run();
+    }//GEN-LAST:event_backButtonActionPerformed
 
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        String item = menuField.getText();
+        int price = Integer.parseInt(priceField.getText().trim());
+
+        PSH_EnterpriseCatalogDirectory enterpriseCatalogueDirectory = location.getEnterpriseCatalogDirectory();
+        List<PSH_EnterCatag_Restaurant> resList = enterpriseCatalogueDirectory.getListOfRestaurants();                // get all restaurants
+        for (PSH_EnterCatag_Restaurant res : resList) {
+            List<PSH_Manager> mgr = res.getListOfManager();
+            for (PSH_Manager manager : mgr) {
+                if (manager.getUsername().equals(user)) {            //if manager is found in that catering then add item to that res...
+                    res.addMenuItem(item, price);
+
+                    populateMenu();
+                    JOptionPane.showMessageDialog(this, "Item added successfully");
+                    return;
+                }
+            }}
+    }//GEN-LAST:event_addBtnActionPerformed
+
+public boolean validateMenu() {
+        if (menuField.getText().matches("[a-zA-Z]{2,19}")) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid input : menu should contain only alphabets");
+            return false;
+        }
+    }
+    
+    public boolean priceField() {
+        if (priceField == null) {
+            JOptionPane.showMessageDialog(this, "price field should not b left blank");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+     private void populateMenu() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        
+        PSH_EnterpriseCatalogDirectory enterpriseCatalogueDirectory = location.getEnterpriseCatalogDirectory();
+        for (PSH_EnterCatag_Restaurant res : enterpriseCatalogueDirectory.getListOfRestaurants()) {
+            if (res.findManager(user) != null) {
+                Object row[] = new Object[10];
+                for (PSH_Restaurant_Menu item : res.getListOfMenuItem()) {
+                    row[0] = item.getDetails();
+                    row[1] = item.getPrice();
+                    model.addRow(row);
+                }
+            }
+        }
+     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField menuField;
+    private javax.swing.JTextField priceField;
     // End of variables declaration//GEN-END:variables
 }

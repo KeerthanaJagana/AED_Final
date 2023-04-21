@@ -4,17 +4,31 @@
  */
 package UI.CustomerRole;
 
+import Model.PSH_Business;
+import Model.PSH_RoomBooking;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
 
+    private PSH_Business systems;
+    private Runnable callOnCreateMethod1;
+    private String username;
+    private PSH_RoomBooking booking;
     /**
      * Creates new form PSH_CustomerBookingReportJPanel
      */
-    public PSH_CustomerBookingReportJPanel() {
+    public PSH_CustomerBookingReportJPanel(PSH_Business systems, Runnable callOnCreateMethod1, String username, PSH_RoomBooking booking) {
         initComponents();
+        this.systems = systems;
+        this.callOnCreateMethod1 = callOnCreateMethod1;
+        this.username = username;
+        this.booking = booking;
+        populatePanel();
+        bookingDetails.setColumns(19);
+        bookingDetails.setRows(7);
     }
 
     /**
@@ -26,19 +40,110 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        checkin = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        checkout = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        bookingDetails = new javax.swing.JTextArea();
+
+        backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        backBtn.setText("<==BACK");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        jLabel3.setText("DETAILED  ORDER REPORT");
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel1.setText("CHECK-IN ");
+
+        checkin.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel2.setText("CHECK-OUT");
+
+        checkout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+
+        bookingDetails.setColumns(20);
+        bookingDetails.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        bookingDetails.setRows(5);
+        jScrollPane1.setViewportView(bookingDetails);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(69, 69, 69)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(74, 74, 74))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(backBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 17, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        callOnCreateMethod1.run();
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void populatePanel() {
+        checkin.setText(booking.getCheckin().toString());
+        checkout.setText(booking.getCheckout().toString());
+        bookingDetails.setText(booking.prettyPrint());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
+    private javax.swing.JTextArea bookingDetails;
+    private javax.swing.JTextField checkin;
+    private javax.swing.JTextField checkout;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

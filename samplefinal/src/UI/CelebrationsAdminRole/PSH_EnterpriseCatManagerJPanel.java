@@ -179,7 +179,7 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
         add(txtSuprName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 194, -1));
 
         cmbBCType.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        cmbBCType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a Business Catalogue", "Entertainment", "Catering", "Resort", "Event" }));
+        cmbBCType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a Business Catalogue", "Theatre", "Restaurant", "Hotel", "Celebration" }));
         cmbBCType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbBCTypeActionPerformed(evt);
@@ -443,7 +443,9 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
     private void cmbBCTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBCTypeActionPerformed
         cmbBCName.removeAllItems();
         String locationName = cmbLocation.getSelectedItem().toString();
+        System.out.println(locationName);
         PSH_location location = enterpriseAdmin.findServiceLocation(locationName);
+        System.out.println(location); 
         PSH_EnterpriseCatalogDirectory enterpriseCatalogueDirectory = location.getEnterpriseCatalogDirectory();
         String enterpriseType1 = cmbBCType.getSelectedItem().toString();
         if (enterpriseType1.equals("Restaurant")) {

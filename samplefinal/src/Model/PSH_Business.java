@@ -20,6 +20,7 @@ public class PSH_Business {
     public PSH_Business(String uname,String pwd){
         listOfLocation = new ArrayList<>();
         listOfLocation.add(new PSH_location("Boston"));
+        customerDirectory=new PSH_CustomerDirectory();
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
         userNamePasswordMap.put(uname, pwd);

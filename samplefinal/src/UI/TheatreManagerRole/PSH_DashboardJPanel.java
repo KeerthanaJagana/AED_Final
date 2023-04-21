@@ -5,6 +5,8 @@
 package UI.TheatreManagerRole;
 
 import Model.PSH_Business;
+import Model.PSH_Customer;
+import Model.PSH_CustomerDirectory;
 import Model.PSH_EnterCatag_Theatre;
 import Model.PSH_Organization;
 import Model.PSH_RoomBooking;
@@ -32,8 +34,15 @@ public class PSH_DashboardJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PSH_DashboardJPanel
      */
-    public PSH_DashboardJPanel() {
+    public PSH_DashboardJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, String user, String type, PSH_EnterCatag_Theatre entertainment) {
         initComponents();
+        this.enterpriseAdmin = enterpriseAdmin;
+        this.callOnCreateMethod = callOnCreateMethod;
+        this.user = user;
+        this.type = type;
+        this.theatre = entertainment;
+        populateComboBox();
+        populateTable();
     }
 
     /**
@@ -268,6 +277,72 @@ public class PSH_DashboardJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnassignWorkActionPerformed
 
 
+    private void populateTable() {
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+
+        Object row[] = new Object[10];
+        PSH_CustomerDirectory customerDirec = enterpriseAdmin.getCustomerDirectory(); //get all customers
+        for (PSH_Customer customer : customerDirec.getListOfCustomer()) {
+            for (PSH_RoomBooking booking : customer.getRoombookingList()) {      //get booking details each customer
+                for (PSH_EnterCatagService service : booking.getServices()) {       //get services under booking
+
+                    if (service.getEnterpriseCatalog().getName().equals(theatre.getName())) {
+
+                        PSH_EnterCatag_TheatreService entertainmentService = (PSH_EnterCatag_TheatreService) service;
+
+                        row[0] = booking;
+                        row[1] = customer;
+                        row[2] = entertainmentService.getStatus();
+                        row[3] = "NO";
+                        row[4] = "NO";
+                        row[5] = "NO";
+
+                        for (PSH_EnterCatag_TheatreService.TheatreServiceType type : entertainmentService.getTheatreServices()) {
+                            switch (type) {
+                                case MUSICBAND:
+                                    row[3] = "YES";
+                                    break;
+                                case MAGICIAN:
+                                    row[4] = "YES";
+                                    break;
+                                case STANDUPCOMEDY:
+                                    row[5] = "YES";
+                                    break;
+                            }
+                        }
+                        model.addRow(row);
+                    }
+                    
+                }
+            }
+        }
+
+    }
+
+    private void populateComboBox() {
+        cmbsingerORG.addItem(null);
+        cmbmagicianORG.addItem(null);
+        cmbstandupcomORG.addItem(null);
+
+        for (PSH_Theatre_MusicBandOrg singer : theatre.getListOfMusicBand()) {
+            if (singer != null) {
+                cmbsingerORG.addItem(singer);
+            }
+        }
+        for (PSH_Theatre_MagicianOrg magician : theatre.getListOfMagicians()) {
+            if (magician != null) {
+                cmbmagicianORG.addItem(magician);
+            }
+        }
+        for (PSH_Theatre_StandUpComedyOrg com : theatre.getListOfComedians()) {
+            if (com != null) {
+                cmbstandupcomORG.addItem(com);
+            }
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton btnassignWork;

@@ -20,6 +20,7 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
 
      private PSH_Business enterpriseAdmin;
     private Runnable callMethod;
+    
     /**
      * Creates new form PSH_ManageCustomersJPanel
      */
@@ -27,7 +28,10 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         initComponents();
         this.enterpriseAdmin=enterpriseAdmin;
         this.callMethod=callMethod;
-        populateTable();
+//        if(this.enterpriseAdmin.getCustomerDirectory().getListOfCustomer().size()!=0){
+//        populateTable();
+//    }
+        
     }
 
     /**

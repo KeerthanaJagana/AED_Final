@@ -4,17 +4,33 @@
  */
 package UI.CustomerRole;
 
+import Model.PSH_Business;
+import Model.PSH_RoomBooking;
+import PSH_Model.EnterpriseServices.PSH_EnterCatag_HotelService;
+import java.util.Date;
+import java.util.function.Consumer;
+import javax.swing.JOptionPane;
+import main.DateUtilities;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_TourSafariJPanel extends javax.swing.JPanel {
 
+    private PSH_Business enterpriseAdmin;
+    private Consumer<PSH_RoomBooking> callOnCreateMethod1;
+    private String username;
+    private PSH_RoomBooking booking;
     /**
      * Creates new form PSH_TourSafariJPanel
      */
-    public PSH_TourSafariJPanel() {
+    public PSH_TourSafariJPanel(PSH_Business enterpriseAdmin, Consumer<PSH_RoomBooking> callOnCreateMethod1, String username, PSH_RoomBooking booking) {
         initComponents();
+        this.enterpriseAdmin = enterpriseAdmin;
+        this.callOnCreateMethod1 = callOnCreateMethod1;
+        this.username = username;
+        this.booking = booking;
     }
 
     /**
@@ -26,19 +42,143 @@ public class PSH_TourSafariJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        dateField = new com.toedter.calendar.JDateChooser();
+        RbtnTourGuide = new javax.swing.JRadioButton();
+        RBtnSafariService = new javax.swing.JRadioButton();
+        placeRequest = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        backBtn.setText("<==BACK");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        jLabel1.setText("HOTEL SERVICE PANEL");
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel3.setText("DATE");
+
+        RbtnTourGuide.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        RbtnTourGuide.setText("TOUR GUIDE ($100)");
+        RbtnTourGuide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RbtnTourGuideActionPerformed(evt);
+            }
+        });
+
+        RBtnSafariService.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        RBtnSafariService.setText("safari SERVICE ($100)");
+
+        placeRequest.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        placeRequest.setText("PLACE REQUEST");
+        placeRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                placeRequestActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(244, 244, 244))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(RbtnTourGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(RBtnSafariService)))
+                .addGap(216, 216, 216))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(backBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(placeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(backBtn)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel3)))
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RbtnTourGuide)
+                    .addComponent(RBtnSafariService))
+                .addGap(50, 50, 50)
+                .addComponent(placeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        callOnCreateMethod1.accept(booking);
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void RbtnTourGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RbtnTourGuideActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RbtnTourGuideActionPerformed
+
+    private void placeRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeRequestActionPerformed
+        boolean tourGuideBtnSelected = RbtnTourGuide.isSelected();
+        boolean carServiceBtnSelected = RBtnSafariService.isSelected();
+        Date date = DateUtilities.formatDate(dateField.getDate());
+        Date checkin = booking.getCheckin();
+        Date checkout = booking.getCheckout();
+        if (date.compareTo(checkin) < 0 || date.compareTo(checkout) > 0) {
+            JOptionPane.showMessageDialog(this, "Selected date should be within check-in date (" + checkin
+                    + ") and checkout date (" + checkout + ")");
+            return;
+        }
+
+        PSH_EnterCatag_HotelService hotelService = booking.getResortService();
+        if (tourGuideBtnSelected) {
+            hotelService.addService(PSH_EnterCatag_HotelService.HotelServiceType.TOURGUIDE);
+        }
+        if (carServiceBtnSelected) {
+            hotelService.addService(PSH_EnterCatag_HotelService.HotelServiceType.SAFARISERVICE);
+        }
+
+        hotelService.setDate(date);
+        JOptionPane.showMessageDialog(this, "Your hotel services are been added.");
+        callOnCreateMethod1.accept(booking);
+    }//GEN-LAST:event_placeRequestActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton RBtnSafariService;
+    private javax.swing.JRadioButton RbtnTourGuide;
+    private javax.swing.JButton backBtn;
+    private com.toedter.calendar.JDateChooser dateField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton placeRequest;
     // End of variables declaration//GEN-END:variables
 }

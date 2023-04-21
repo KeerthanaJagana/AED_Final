@@ -19,7 +19,7 @@ public class PSH_CelebManagerPanelJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PSH_CelebManagerPanelJPanel
      */
-    public PSH_CelebManagerPanelJPanel() {
+    public PSH_CelebManagerPanelJPanel(PSH_Business systemAdmin, Runnable callOnCreateMethod1, Runnable callOnCreateMethod2, Runnable callOnCreateMethod3) {
         initComponents();
          this.systemAdmin = systemAdmin;
         this.callOnMethod1 = callOnMethod1;

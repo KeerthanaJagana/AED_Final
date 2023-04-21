@@ -70,6 +70,11 @@ public class PSH_EnterpriseCatJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 255));
 
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel1.setText("Enterprise Catalogue");
@@ -84,6 +89,11 @@ public class PSH_EnterpriseCatJPanel extends javax.swing.JPanel {
         });
 
         jButton2.setText("Display");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -434,6 +444,16 @@ public class PSH_EnterpriseCatJPanel extends javax.swing.JPanel {
         txtBCName.setText(bcName);
         txtMobile.setText(bcContact);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        populateTable();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        callMethod.run();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     private void populateTable() {

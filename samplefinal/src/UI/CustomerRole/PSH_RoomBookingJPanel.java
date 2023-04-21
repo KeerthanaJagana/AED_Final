@@ -4,17 +4,41 @@
  */
 package UI.CustomerRole;
 
+import Model.PSH_Business;
+import Model.PSH_Customer;
+import Model.PSH_CustomerDirectory;
+import Model.PSH_RoomBooking;
+import java.util.List;
+import java.util.function.Consumer;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author keerthanajagana
  */
 public class PSH_RoomBookingJPanel extends javax.swing.JPanel {
 
+    private PSH_Business enterpriseAdmin;
+    private Runnable callOnCreateMethod1;
+    private Consumer<PSH_RoomBooking> callOnAddServiceMethod;
+    private Consumer<PSH_RoomBooking> callOnViewServiceMethod;
+    private String username;
+
     /**
      * Creates new form PSH_RoomBookingJPanel
      */
-    public PSH_RoomBookingJPanel() {
+    public PSH_RoomBookingJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod1, Consumer<PSH_RoomBooking> callOnCreateMethod2, Consumer<PSH_RoomBooking> callOnViewServiceMethod, String username) {
         initComponents();
+        initComponents();
+        this.enterpriseAdmin = enterpriseAdmin;
+        this.callOnCreateMethod1 = callOnCreateMethod1;
+        this.callOnAddServiceMethod = callOnCreateMethod2;
+        this.callOnViewServiceMethod = callOnViewServiceMethod;
+        this.username = username;
+
+        populateTable();
+        
     }
 
     /**
@@ -26,19 +50,177 @@ public class PSH_RoomBookingJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        addServiceBtn = new javax.swing.JButton();
+        viewOrder = new javax.swing.JButton();
+
+        backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        backBtn.setText("<==BACK");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        jLabel1.setText("BOOKING DETAILS");
+
+        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RESORT NAME", "BOOKING ID", "PRICE", "STATUS", "CHECK_IN", "CHECK OUT"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        addServiceBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        addServiceBtn.setText("ADD SERVICES");
+        addServiceBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addServiceBtnActionPerformed(evt);
+            }
+        });
+
+        viewOrder.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        viewOrder.setText("VIEW SERVICE DETAILS");
+        viewOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewOrderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(backBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(addServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(viewOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        callOnCreateMethod1.run();
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void addServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addServiceBtnActionPerformed
+         int selectedRowIndex = jTable1.getSelectedRow();
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a booking to add services.");
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        String bookingId = (String) model.getValueAt(selectedRowIndex, 1);
+
+        System.out.println(bookingId + " is selected");
+
+        PSH_CustomerDirectory cusDirectory = enterpriseAdmin.getCustomerDirectory();
+        PSH_Customer cus = cusDirectory.findCustomerUsername(username);
+
+        List<PSH_RoomBooking> list = cus.getRoombookingList();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId().equals(bookingId)) {
+                callOnAddServiceMethod.accept(list.get(i));
+                return;
+            }
+        }
+    }//GEN-LAST:event_addServiceBtnActionPerformed
+
+    private void viewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderActionPerformed
+        int selectedRowIndex = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a booking to view its details.");
+            return;
+        }
+        String bookingId = (String) model.getValueAt(selectedRowIndex, 1);
+
+        System.out.println(bookingId + " is selected");
+
+        PSH_CustomerDirectory cusDirectory = enterpriseAdmin.getCustomerDirectory();
+        PSH_Customer cus = cusDirectory.findCustomerUsername(username);
+
+        List<PSH_RoomBooking> list = cus.getRoombookingList();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId().equals(bookingId)) {
+                callOnViewServiceMethod.accept(list.get(i));
+                return;
+            }
+        }
+    }//GEN-LAST:event_viewOrderActionPerformed
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        Object row[] = new Object[10];
+        PSH_CustomerDirectory cusDirectory = enterpriseAdmin.getCustomerDirectory();
+        PSH_Customer cus = cusDirectory.findCustomerUsername(username);
+        System.out.println("customer found is " + cus.getName() + " username is " + username);
+        for (PSH_RoomBooking bookingList : cus.getRoombookingList()) {
+            row[0] = bookingList.getResortService().getEnterpriseCatalog();
+            row[1] = bookingList.getId();
+            row[2] = bookingList.getTotalCost();
+            row[3] = bookingList.getStatus();
+            row[4] = bookingList.getCheckin();
+            row[5] = bookingList.getCheckout();
+            model.addRow(row);
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addServiceBtn;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton viewOrder;
     // End of variables declaration//GEN-END:variables
 }

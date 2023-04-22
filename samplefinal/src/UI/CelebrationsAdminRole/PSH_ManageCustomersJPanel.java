@@ -245,7 +245,7 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
             return;
         }
 
-        PSH_Customer client = enterpriseAdmin.getCustomerDirectory().addCustomer();  //add client to directory in system
+        PSH_Customer client = this.enterpriseAdmin.getCustomerDirectory().addCustomer();  //add client to directory in system
         client.setName(name);
         client.setContact(contact);
         client.setCity(city);

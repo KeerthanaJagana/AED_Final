@@ -568,7 +568,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
 
     private void renderRoomPanel() {
         PSH_location location = findUserLocationForResort();
-        PSH_HotelManagerRoomJPanel room = new PSH_HotelManagerRoomJPanel(enterpriseAdmin, this::resortSupervisorPanel, location, userName);
+        PSH_HotelManagerRoomJPanel room = new PSH_HotelManagerRoomJPanel(enterpriseAdmin, this::resortSupervisorPanel, userName, location);
         jSplitPane1.setRightComponent(room);
     }
 

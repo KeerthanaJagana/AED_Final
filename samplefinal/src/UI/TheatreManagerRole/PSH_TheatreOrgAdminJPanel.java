@@ -439,7 +439,7 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
                             for (PSH_Manager supr : singer.getListOfManager()) {
                                 if (supr.getUsername().equals(selectedUser)) {
                                     singer.deleteManager(supr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor deleted successfully");
                                     populateTable();
                                     return;
                                 }
@@ -452,7 +452,7 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
                             for (PSH_Manager supr : magician.getListOfManager()) {
                                 if (supr.getUsername().equals(selectedUser)) {
                                     magician.deleteManager(supr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor deleted successfully");
                                     populateTable();
                                     return;
                                 }
@@ -465,7 +465,7 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
                             for (PSH_Manager supr : choreographer.getListOfManager()) {
                                 if (supr.getUsername().equals(selectedUser)) {
                                     choreographer.deleteManager(supr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor deleted successfully");
                                     populateTable();
                                     return;
                                 }

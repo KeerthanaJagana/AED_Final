@@ -383,7 +383,7 @@ public class PSH_RestaurantOrgAdminJPanel extends javax.swing.JPanel {
                             for (PSH_Manager man : del.getListOfManager()) {
                                 if (man.getUsername().equals(selectedUser)) {
                                     del.deleteSupervisor(man);
-                                    JOptionPane.showMessageDialog(this, " Organisation Manager added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Manager deleted successfully");
                                     populateTable();
                                     return;
                                 }

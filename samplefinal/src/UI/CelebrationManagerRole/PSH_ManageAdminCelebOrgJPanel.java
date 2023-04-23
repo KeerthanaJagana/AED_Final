@@ -32,7 +32,7 @@ public class PSH_ManageAdminCelebOrgJPanel extends javax.swing.JPanel {
      * Creates new form PSH_ManageAdminCelebOrgJPanel
      */
     public PSH_ManageAdminCelebOrgJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, String user, String type, PSH_location location) {
-        initComponents();
+        
         initComponents();
         this.enterpriseAdmin = enterpriseAdmin;
         this.callOnCreateMethod = callOnCreateMethod;

@@ -75,8 +75,8 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 34, -1, -1));
 
         lblsysadmin.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        lblsysadmin.setText("MANAGE CLIENTS");
-        add(lblsysadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 250, -1));
+        lblsysadmin.setText("MANAGE CUSTOMERS");
+        add(lblsysadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 280, -1));
 
         customerTable.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
         customerTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,7 +132,7 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel2.setText("CLIENT NAME:");
+        jLabel2.setText("CUSTOMER NAME:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 406, 168, -1));
 

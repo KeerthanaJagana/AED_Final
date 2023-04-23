@@ -30,7 +30,7 @@ public class PSH_HotelManagerRoomJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PSH_HotelManagerRoomJPanel
      */
-    public PSH_HotelManagerRoomJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, PSH_location location, String user) {
+    public PSH_HotelManagerRoomJPanel(PSH_Business enterpriseAdmin, Runnable callOnCreateMethod, String user, PSH_location location) {
         initComponents();
         this.enterpriseAdmin=enterpriseAdmin;
         this.callOnCreateMethod=callOnCreateMethod;

@@ -441,7 +441,7 @@ public class PSH_ManageAdminCelebOrgJPanel extends javax.swing.JPanel {
                             for (PSH_Manager mgr : birthday.getListOfManager()) {
                                 if (mgr.getUsername().equals(selectedUser)) {
                                     birthday.deleteSupervisor(mgr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Manager added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Manager deleted successfully");
                                     populateTable();
                                     return;
                                 }
@@ -454,7 +454,7 @@ public class PSH_ManageAdminCelebOrgJPanel extends javax.swing.JPanel {
                             for (PSH_Manager mgr : wed.getListOfManager()) {
                                 if (mgr.getUsername().equals(selectedUser)) {
                                     wed.deleteSupervisor(mgr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Manager added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Manager deleted successfully");
                                     populateTable();
                                     return;
                                 }
@@ -467,7 +467,7 @@ public class PSH_ManageAdminCelebOrgJPanel extends javax.swing.JPanel {
                             for (PSH_Manager mgr : ann.getListOfManager()) {
                                 if (mgr.getUsername().equals(selectedUser)) {
                                     ann.deleteSupervisor(mgr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Manager added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Manager deleted successfully");
                                     populateTable();
                                     return;
                                 }

@@ -420,7 +420,7 @@ public class PSH_HotelManagerAdminOrgJPanel extends javax.swing.JPanel {
                             for (PSH_Manager supr : tourGuide.getListOfManager()) {
                                 if (supr.getUsername().equals(selectedUser)) {
                                     tourGuide.deleteManager(supr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Supervisor deleted successfully");
                                     populateTable();
                                     return;
                                 }
@@ -433,7 +433,7 @@ public class PSH_HotelManagerAdminOrgJPanel extends javax.swing.JPanel {
                             for (PSH_Manager supr : safariService.getListOfManager()) {
                                 if (supr.getUsername().equals(selectedUser)) {
                                     safariService.deleteManger(supr);
-                                    JOptionPane.showMessageDialog(this, " Organisation Manager added successfully");
+                                    JOptionPane.showMessageDialog(this, " Organisation Manager deleted successfully");
                                     populateTable();
                                     return;
                                 }

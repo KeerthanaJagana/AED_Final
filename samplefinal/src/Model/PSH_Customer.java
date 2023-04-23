@@ -22,6 +22,7 @@ public class PSH_Customer {
 
     public PSH_Customer() {
         roombookingList = new ArrayList<>();
+        
     }
 
     public String getPassword() {

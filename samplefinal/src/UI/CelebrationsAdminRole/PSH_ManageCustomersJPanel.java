@@ -253,9 +253,10 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         client.setUserName(username);
         client.setPassword(password);
         populateTable();
-        JOptionPane.showMessageDialog(this, "Customer added successfully");
+        
 
         enterpriseAdmin.addUser(username, password, "Customer");
+        JOptionPane.showMessageDialog(this, "Customer added successfully");
 
         nameField.setText("");
         contactField.setText("");

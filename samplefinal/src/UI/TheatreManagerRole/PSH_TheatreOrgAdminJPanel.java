@@ -40,6 +40,7 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
         this.location = location;
         txtlocation.setText(location.getName());
         txtlocation.setEditable(false);
+        populateTable();
 
     }
 

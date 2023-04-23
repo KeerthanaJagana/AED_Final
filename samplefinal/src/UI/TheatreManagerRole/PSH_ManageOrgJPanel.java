@@ -276,9 +276,9 @@ public class PSH_ManageOrgJPanel extends javax.swing.JPanel {
             if (orgType1.equals("Magician")) {
                 entertainment.get(i).addMagicianORG(name, mobile, locationName);
                 JOptionPane.showMessageDialog(this, "Magician Organisation added successfully");
-            } else if (orgType1.equals("Choreographer")) {
+            } else if (orgType1.equals("StandUpComedy")) {
                 entertainment.get(i).addStandUpComedyORG(name, mobile, locationName);
-                JOptionPane.showMessageDialog(this, "Music band Organisation successfully");
+                JOptionPane.showMessageDialog(this, "Stand up Comedy Organisation successfully");
             } else {
                 entertainment.get(i).addMusicBandORG(name, mobile, locationName);
                 JOptionPane.showMessageDialog(this, "Music Band Organisation added successfully");

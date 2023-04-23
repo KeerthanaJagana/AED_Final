@@ -12,7 +12,6 @@ import Model.PSH_RoomType;
 import Model.PSH_RoomType.RoomType;
 import Model.PSH_RoomsList;
 import Model.PSH_location;
-import static java.util.Collections.list;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -36,7 +35,7 @@ public class PSH_HotelManagerRoomJPanel extends javax.swing.JPanel {
         this.callOnCreateMethod=callOnCreateMethod;
         this.user= user;
         this.location = location;
-         PSH_location location1 = enterpriseAdmin.findServiceLocation(location.getName());
+        PSH_location location1 = enterpriseAdmin.findServiceLocation(location.getName());
         List<PSH_EnterCatag_Hotel> list = location1.getEnterpriseCatalogDirectory().getListOfHotels();
 
         for (RoomType type : RoomType.values()) {
@@ -200,7 +199,7 @@ public class PSH_HotelManagerRoomJPanel extends javax.swing.JPanel {
                         Object row[] = new Object[10];
                         row[0] = room.getRoomNo();
                         row[1] = room.getRoomType().getName();
-                        row[2] = room.getRoomType().getName();
+                        row[2] = room.getRoomType().getRate();
                         model.addRow(row);
                     }
                 }

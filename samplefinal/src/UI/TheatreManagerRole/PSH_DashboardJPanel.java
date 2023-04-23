@@ -66,10 +66,10 @@ public class PSH_DashboardJPanel extends javax.swing.JPanel {
         cmbstandupcomORG = new javax.swing.JComboBox();
         btnassignWork = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backButton.setText("<==BACK");
+        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -109,7 +109,7 @@ public class PSH_DashboardJPanel extends javax.swing.JPanel {
         cmbsingerORG.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        jLabel4.setText("SELECT A Stand Up Comedy");
+        jLabel4.setText("SELECT A STAND UP COMEDY");
 
         cmbstandupcomORG.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cmbstandupcomORG.addActionListener(new java.awt.event.ActionListener() {

@@ -57,20 +57,20 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
         menuItem = new javax.swing.JComboBox();
         placeOrder = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backBtn.setText("<==BACK");
+        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
-        jLabel1.setText("MENU ITEMS IN CATERING");
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setText("MENU ITEMS IN RESTAURANT");
 
-        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setText("SELECT A CATERING NAME: ");
 
         cmbCatering.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -80,7 +80,7 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setText("SELECT ITEM FROM LIST: ");
 
         menuItem.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -105,15 +105,18 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
+                        .addGap(339, 339, 339)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cmbCatering, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(menuItem, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(backBtn)))
                 .addGap(0, 163, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -122,7 +125,7 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(271, 271, 271)
+                        .addGap(302, 302, 302)
                         .addComponent(placeOrder)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -131,9 +134,9 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(backBtn)
-                .addGap(39, 39, 39)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(49, 49, 49)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel4)
                 .addGap(26, 26, 26)
                 .addComponent(cmbCatering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,9 +144,9 @@ public class PSH_RestaurantServicesJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(menuItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(49, 49, 49)
                 .addComponent(placeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

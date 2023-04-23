@@ -44,7 +44,7 @@ public class PSH_CelebrationPlannerAdminJPanel extends javax.swing.JPanel {
         customerBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         locationBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         locationBtn.setText("Locations");

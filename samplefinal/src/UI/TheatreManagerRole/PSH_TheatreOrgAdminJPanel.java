@@ -71,10 +71,10 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         passwordField = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backButton.setText("<==BACK");
+        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -144,7 +144,7 @@ public class PSH_TheatreOrgAdminJPanel extends javax.swing.JPanel {
         jLabel1.setText("ORGANIZATION TYPE");
 
         orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an organisation type", "Magician", "Choreographer", "Singer" }));
+        orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an organisation type", "Magician", "StandUpComedy", "MusicBand" }));
         orgCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgComboActionPerformed(evt);

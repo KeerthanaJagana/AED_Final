@@ -67,7 +67,7 @@ public class PSH_EnterpriseCatJPanel extends javax.swing.JPanel {
         cmbLocationType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

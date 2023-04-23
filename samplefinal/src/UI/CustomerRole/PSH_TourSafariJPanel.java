@@ -50,10 +50,10 @@ public class PSH_TourSafariJPanel extends javax.swing.JPanel {
         RBtnSafariService = new javax.swing.JRadioButton();
         placeRequest = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backBtn.setText("<==BACK");
+        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
@@ -75,7 +75,7 @@ public class PSH_TourSafariJPanel extends javax.swing.JPanel {
         });
 
         RBtnSafariService.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        RBtnSafariService.setText("safari SERVICE ($100)");
+        RBtnSafariService.setText("SAFARI SERVICE ($100)");
 
         placeRequest.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         placeRequest.setText("PLACE REQUEST");
@@ -90,28 +90,28 @@ public class PSH_TourSafariJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(244, 244, 244))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(244, 244, 244))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
-                        .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(370, 370, 370))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(RbtnTourGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(RBtnSafariService)))
-                .addGap(216, 216, 216))
+                        .addComponent(RbtnTourGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(RBtnSafariService)
+                        .addGap(188, 188, 188))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(backBtn))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(276, 276, 276)
+                        .addGap(213, 213, 213)
                         .addComponent(placeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

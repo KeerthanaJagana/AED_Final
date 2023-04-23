@@ -61,10 +61,10 @@ public class PSH_ManageRestaurantOrgJPanel extends javax.swing.JPanel {
         cityNameTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backButton.setText("<==BACK");
+        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -72,7 +72,7 @@ public class PSH_ManageRestaurantOrgJPanel extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
-        jLabel5.setText("MANAGE CATERING ORGANISATION");
+        jLabel5.setText("MANAGE RESTAURANT ORGANISATION");
 
         jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

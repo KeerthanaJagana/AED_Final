@@ -40,10 +40,10 @@ public class PSH_TheatreMangerJPanel extends javax.swing.JPanel {
         btnSuperviseEvent = new javax.swing.JButton();
         btnSuperviseEventAdmin = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
-        jLabel1.setText("ENTERTAINMENT SUPERVISOR PANEL ");
+        jLabel1.setText("ENTERTAINMENT MANAGER PANEL ");
 
         btnDisplayDashboard.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnDisplayDashboard.setText("DISPLAY DASHBOARD");
@@ -54,7 +54,7 @@ public class PSH_TheatreMangerJPanel extends javax.swing.JPanel {
         });
 
         btnSuperviseEvent.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        btnSuperviseEvent.setText("SUPERVISE EVENT");
+        btnSuperviseEvent.setText("MANAGE EVENT");
         btnSuperviseEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuperviseEventActionPerformed(evt);
@@ -62,7 +62,7 @@ public class PSH_TheatreMangerJPanel extends javax.swing.JPanel {
         });
 
         btnSuperviseEventAdmin.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        btnSuperviseEventAdmin.setText("SUPERVISE EVENT ADMIN");
+        btnSuperviseEventAdmin.setText("MANAGE EVENT ADMIN");
         btnSuperviseEventAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuperviseEventAdminActionPerformed(evt);
@@ -73,21 +73,17 @@ public class PSH_TheatreMangerJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
-                .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194))
             .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel1)
+                .addGap(0, 90, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(237, 237, 237)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel1)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,11 +92,11 @@ public class PSH_TheatreMangerJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(51, 51, 51)
                 .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(69, 69, 69)
                 .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(71, 71, 71)
                 .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

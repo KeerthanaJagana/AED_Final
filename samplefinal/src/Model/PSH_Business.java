@@ -20,11 +20,23 @@ public class PSH_Business {
     public PSH_Business(String uname,String pwd){
         listOfLocation = new ArrayList<>();
         listOfLocation.add(new PSH_location("Boston"));
-        customerDirectory=new PSH_CustomerDirectory();
+        this.customerDirectory=new PSH_CustomerDirectory();
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
         userNamePasswordMap.put(uname, pwd);
         addUser(uname, pwd, "admin");
+    }
+
+    public PSH_CustomerDirectory getCustomerDirectory() {
+        if(this.customerDirectory==null){
+            this.customerDirectory=new PSH_CustomerDirectory();
+        }
+        return this.customerDirectory;
+   
+    }
+
+    public void setCustomerDirectory(PSH_CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
     }
 
     public List<PSH_location> getListOfLocation() {
@@ -35,13 +47,7 @@ public class PSH_Business {
         this.listOfLocation = listOfLocation;
     }
 
-    public PSH_CustomerDirectory getCustomerDirectory() {
-        return customerDirectory;
-    }
-
-    public void setCustomerDirectory(PSH_CustomerDirectory customerDirectory) {
-        this.customerDirectory = customerDirectory;
-    }
+    
 
     
 

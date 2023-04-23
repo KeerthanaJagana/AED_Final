@@ -19,6 +19,7 @@ public class PSH_CustomerDirectory {
      
     }
 
+
     public List<PSH_Customer> getListOfCustomer() {
         return listOfCustomer;
     }
@@ -30,8 +31,11 @@ public class PSH_CustomerDirectory {
     
 
     public PSH_Customer addCustomer() {
-        PSH_Customer cus = new PSH_Customer();       
+        System.out.println("a");
+        PSH_Customer cus = new PSH_Customer();    
+        System.out.println(cus);
         listOfCustomer.add(cus);
+        System.out.println("b");
         return cus;
     }
 

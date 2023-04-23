@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.8
+Created-By: 19.0.2+7-44 (Oracle Corporation)
+Class-Path: lib/javax.activation-1.2.0.jar lib/db4o-8.0.184.15484.jar 
+ lib/javax.mail-1.6.2.jar lib/jcalendar-1.4.jar lib/AbsoluteLayout.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: main.FinalMainJFrame
+

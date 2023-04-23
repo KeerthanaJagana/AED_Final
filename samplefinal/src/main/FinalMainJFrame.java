@@ -93,7 +93,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginBtn.setText("Login");
@@ -134,7 +134,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        WorkArea.setBackground(new java.awt.Color(204, 204, 255));
+        WorkArea.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Zapfino", 1, 24)); // NOI18N
         jLabel3.setText("Atlantis, The Palm Hotel");

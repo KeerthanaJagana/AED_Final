@@ -43,7 +43,7 @@ public class PSH_LocationsJPanel extends javax.swing.JPanel {
         locTable = new javax.swing.JTable();
         addLOcBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bacjBtn.setText("Back");
@@ -54,7 +54,7 @@ public class PSH_LocationsJPanel extends javax.swing.JPanel {
         });
         add(bacjBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 80, 30));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText("Locations");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 

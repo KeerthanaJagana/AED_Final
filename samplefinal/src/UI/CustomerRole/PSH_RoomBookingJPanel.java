@@ -57,8 +57,10 @@ public class PSH_RoomBookingJPanel extends javax.swing.JPanel {
         addServiceBtn = new javax.swing.JButton();
         viewOrder = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 255, 255));
+
         backBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backBtn.setText("<==BACK");
+        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);

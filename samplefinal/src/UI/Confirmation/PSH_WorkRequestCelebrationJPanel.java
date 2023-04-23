@@ -29,8 +29,8 @@ public class PSH_WorkRequestCelebrationJPanel extends javax.swing.JPanel {
 
     public PSH_WorkRequestCelebrationJPanel(PSH_Business enterpriseAdmin, String userName, String type) {
         initComponents();
-        this.EPAdmin = EPAdmin;
-        this.user = user;
+        this.EPAdmin = enterpriseAdmin;
+        this.user = userName;
         this.type = type;
         lblbookservices.setText(lblbookservices.getText() + type.toUpperCase() + " ORGANIZATION");
         populateTable();

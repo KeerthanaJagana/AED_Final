@@ -15,6 +15,7 @@ import main.DateUtilities;
  * @author nayankarumuri
  */
 public class PSH_RoomType {
+    
     public enum RoomType {
         SUITE(1500, "SUITE"),
         ELITE(1000, "ELITE"),
@@ -53,8 +54,6 @@ public class PSH_RoomType {
     }
 
 
-    
-    
     public Set<Date> getBookings() {
         return bookings;
     }
@@ -117,6 +116,6 @@ public class PSH_RoomType {
     }
 
     public String toString() {
-        return "HallorRoom:{" + roomNo + ", Bookings " + bookings + "}";
+        return "Room:{" + roomNo + ", Bookings " + bookings + "}";
     }
 }

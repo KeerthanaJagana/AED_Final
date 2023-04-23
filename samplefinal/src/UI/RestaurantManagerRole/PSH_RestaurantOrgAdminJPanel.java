@@ -36,6 +36,7 @@ public class PSH_RestaurantOrgAdminJPanel extends javax.swing.JPanel {
         this.user = user;
         this.type = type;
         this.location = location;
+        populateTable();
     }
 
     /**

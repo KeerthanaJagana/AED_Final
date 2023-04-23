@@ -63,7 +63,7 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         passwordField = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backButton.setText("BACK");
@@ -74,8 +74,9 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         });
         add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 34, -1, -1));
 
+        lblsysadmin.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblsysadmin.setText("MANAGE CLIENTS");
-        add(lblsysadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 47, 136, -1));
+        add(lblsysadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 250, -1));
 
         customerTable.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
         customerTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -103,7 +104,7 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 155, 846, 154));
 
-        addButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        addButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         addButton.setText("ADD");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,52 +113,52 @@ public class PSH_ManageCustomersJPanel extends javax.swing.JPanel {
         });
         add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 104, -1));
 
-        updateButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        updateButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
-        add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, -1, -1));
+        add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, -1, -1));
 
-        deleteBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         deleteBtn.setText("DELETE");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
-        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setText("CLIENT NAME:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 406, 168, -1));
 
-        jLabel6.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel6.setText("CITY:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 111, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, 111, -1));
         add(cityField, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 482, 168, -1));
 
-        jLabel9.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel9.setText("STREET:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 111, -1));
         add(txtStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 560, 168, -1));
         add(contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 168, -1));
 
-        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel3.setText("MOBILE NO:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 131, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 131, -1));
 
-        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setText("USERNAME:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 126, -1));
         add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 166, -1));
 
-        jLabel5.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel5.setText("PASSWORD:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 129, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 129, -1));
         add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
 

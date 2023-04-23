@@ -49,6 +49,8 @@ public class PSH_WorkRequestCelebrationJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 255, 255));
+
         lblbookservices.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
         lblbookservices.setText("ASSIGNED WORK REQUESTS  ");
 
@@ -83,7 +85,7 @@ public class PSH_WorkRequestCelebrationJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(lblbookservices)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +94,7 @@ public class PSH_WorkRequestCelebrationJPanel extends javax.swing.JPanel {
                 .addComponent(lblbookservices)
                 .addGap(84, 84, 84)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

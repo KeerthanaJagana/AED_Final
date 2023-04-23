@@ -41,7 +41,7 @@ public class PSH_CelebManagerPanelJPanel extends javax.swing.JPanel {
         orgBtn = new javax.swing.JButton();
         orgadmin = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 24)); // NOI18N
         jLabel1.setText("CELEBRATION MANAGER PANEL ");

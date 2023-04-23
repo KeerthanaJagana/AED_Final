@@ -68,20 +68,18 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
         cmbBCType = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        backButton.setText("<==BACK");
+        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 23, -1, -1));
 
-        lblBCSupr.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
-        lblBCSupr.setText("BUSINESS CATALOGUE SUPERVISOR");
-        add(lblBCSupr, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 75, 695, -1));
+        lblBCSupr.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblBCSupr.setText("BUSINESS CATALOGUE MANAGER");
 
         tblBusinessCatalogue.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
         tblBusinessCatalogue.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,8 +105,6 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblBusinessCatalogue);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 136, 893, 186));
-
         btnAdd.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnAdd.setText("ADD");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +112,6 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 328, 121, 38));
 
         btnUpdate.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnUpdate.setText("UPDATE");
@@ -125,7 +120,6 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 328, -1, 38));
 
         btnDelete.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnDelete.setText("DELETE");
@@ -134,10 +128,8 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(665, 328, -1, 39));
 
         jLabel2.setText("LOCATION:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 385, 119, -1));
 
         cmbLocation.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         cmbLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a Location" }));
@@ -146,29 +138,21 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 cmbLocationActionPerformed(evt);
             }
         });
-        add(cmbLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 194, -1));
 
         jLabel7.setText("Enterprise Catalog name:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 180, -1));
 
         cmbBCName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         cmbBCName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecte name of enterprise" }));
-        add(cmbBCName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 194, -1));
 
         jLabel4.setText("USERNAME:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 80, -1));
 
         usernameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 170, -1));
 
         jLabel5.setText("PASSWORD:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, 120, -1));
 
         jLabel3.setText("SUPERVISOR NAME:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 446, 140, -1));
 
         passwordField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, 194, -1));
 
         txtSuprName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         txtSuprName.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +160,6 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 txtSuprNameActionPerformed(evt);
             }
         });
-        add(txtSuprName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 194, -1));
 
         cmbBCType.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         cmbBCType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a Business Catalogue", "Theatre", "Restaurant", "Hotel", "Celebration" }));
@@ -185,10 +168,109 @@ public class PSH_EnterpriseCatManagerJPanel extends javax.swing.JPanel {
                 cmbBCTypeActionPerformed(evt);
             }
         });
-        add(cmbBCType, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 194, -1));
 
         jLabel1.setText("BUSINESS CATALOGUE:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 385, 150, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(backButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(btnUpdate)
+                        .addGap(123, 123, 123)
+                        .addComponent(btnDelete))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(cmbBCName, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(txtSuprName, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
+                        .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(lblBCSupr, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(cmbLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(cmbBCType, 0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(38, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(backButton)
+                .addGap(22, 22, 22)
+                .addComponent(lblBCSupr)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbBCType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(cmbBCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel3))
+                    .addComponent(txtSuprName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addContainerGap(84, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed

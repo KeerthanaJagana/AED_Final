@@ -12,10 +12,17 @@ import Model.PSH_RoomBooking;
 import Model.PSH_RoomType;
 import Model.PSH_RoomType.RoomType;
 import Model.PSH_location;
+import java.awt.Color;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import main.DateUtilities;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -69,6 +76,7 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
         priceBtn = new javax.swing.JButton();
         priceField = new javax.swing.JTextField();
         bookRoomBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
@@ -133,6 +141,13 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Bar Chart");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -175,7 +190,10 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
                                         .addComponent(DCcheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(30, 30, 30)
                                         .addComponent(DCcheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(roomtypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(roomtypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(111, 111, 111))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(325, 325, 325)
                         .addComponent(cityCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,14 +244,19 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
                     .addComponent(peopleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(lblroom)
-                .addGap(26, 26, 26)
-                .addComponent(roomField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priceBtn)
-                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(bookRoomBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(roomField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(priceBtn)
+                            .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(bookRoomBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jButton1)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -308,6 +331,26 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
         callOnCreateMethod1.run();
     }//GEN-LAST:event_bookRoomBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultCategoryDataset dataset = new  DefaultCategoryDataset();
+        dataset.setValue(new Double(3), "Values", "April");
+        dataset.setValue(new Double(4), "Values", "May");
+        dataset.setValue(new Double(10), "Values", "June");
+        dataset.setValue(new Double(7), "Values", "July");
+        
+        
+        JFreeChart chart = ChartFactory.createBarChart("Months","No.Of Bookings","Values", dataset, PlotOrientation.VERTICAL, false, true, false);
+        chart.setBackgroundPaint(Color.YELLOW);
+        chart.getTitle().setPaint(Color.RED);
+        CategoryPlot p=chart.getCategoryPlot();
+        p.setRangeGridlinePaint(Color.BLUE);
+        ChartFrame frame=new ChartFrame("Bar Chart",chart);
+        frame.setVisible(true);
+        frame.setSize(450,350);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser DCcheckin;
@@ -317,6 +360,7 @@ public class PSH_HotelBookingServicesJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel btnnoofpeople;
     private javax.swing.JComboBox<String> cityCombo;
     private javax.swing.JComboBox<String> cmbResort;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblbookservices;
     private javax.swing.JLabel lblcity;

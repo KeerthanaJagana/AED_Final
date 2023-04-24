@@ -6,6 +6,11 @@ package UI.CustomerRole;
 
 import Model.PSH_Business;
 import Model.PSH_RoomBooking;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -48,6 +53,7 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
         checkout = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         bookingDetails = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
@@ -77,6 +83,13 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
         bookingDetails.setRows(5);
         jScrollPane1.setViewportView(bookingDetails);
 
+        jButton1.setText("Pie Chart");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,11 +111,13 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(74, 74, 74))))
+                                .addGap(74, 74, 74)))
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(backBtn)))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,14 +139,36 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
                     .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(299, 299, 299))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         callOnCreateMethod1.run();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("Hotel", new Integer(10));
+        pieDataset.setValue("Celebration", new Integer(70));
+        pieDataset.setValue("Theatre",new Integer(5));
+        pieDataset.setValue("Restaurant", new Integer(10));
+        pieDataset.setValue("HotelService", new Integer(5));
+        
+        JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        PiePlot p=(PiePlot) chart.getPlot();
+       // p.setForegroundAlpha(TOP_ALIGNMENT); Restaurant
+        ChartFrame frame = new ChartFrame("Pie Chart",chart);
+        frame.setVisible(true);
+        frame.setSize(450,500);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void populatePanel() {
         checkin.setText(booking.getCheckin().toString());
@@ -144,6 +181,7 @@ public class PSH_CustomerBookingReportJPanel extends javax.swing.JPanel {
     private javax.swing.JTextArea bookingDetails;
     private javax.swing.JTextField checkin;
     private javax.swing.JTextField checkout;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

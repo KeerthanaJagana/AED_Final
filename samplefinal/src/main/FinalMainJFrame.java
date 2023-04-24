@@ -89,6 +89,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
         WorkArea = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,25 +144,36 @@ public class FinalMainJFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Zapfino", 3, 24)); // NOI18N
         jLabel4.setText(" The Palm Hotel");
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/pic.jpeg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+
         javax.swing.GroupLayout WorkAreaLayout = new javax.swing.GroupLayout(WorkArea);
         WorkArea.setLayout(WorkAreaLayout);
         WorkAreaLayout.setHorizontalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
                 .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(247, Short.MAX_VALUE))
+                    .addGroup(WorkAreaLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 462, Short.MAX_VALUE))
+                    .addGroup(WorkAreaLayout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGap(30, 30, 30))
         );
         WorkAreaLayout.setVerticalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel4)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(23, 23, 23)
+                .addComponent(jLabel6)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(WorkArea);
@@ -710,6 +722,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginBtn;

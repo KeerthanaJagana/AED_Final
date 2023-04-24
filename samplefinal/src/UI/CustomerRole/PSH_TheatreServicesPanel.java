@@ -83,7 +83,7 @@ public class PSH_TheatreServicesPanel extends javax.swing.JPanel {
         cmbEntertainment.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
 
         btnComedy.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        btnComedy.setText("DANCE ($100)");
+        btnComedy.setText(" ($100)");
         btnComedy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComedyActionPerformed(evt);

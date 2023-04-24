@@ -121,7 +121,7 @@ public class PSH_ServiceBookCelebJPanel extends javax.swing.JPanel {
         });
 
         radioAnniversary.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        radioAnniversary.setText("Anniversary");
+        radioAnniversary.setText("ANNIVERSARY");
         radioAnniversary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioAnniversaryActionPerformed(evt);

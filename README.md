@@ -57,7 +57,8 @@ Database Used : *DB4O*
 12. Special attention has been given to make the application interaction intuitive, colorful and user-friendly.
 13. Validations have been done for all user entered fields.
 
-##Contributions
+## Contributions
+
 Bhavya:
 
 1. Classes for Enterprise Hotel and Restaurant – PSH_Business, PSH_EnterCatag_Hotel, PSH_Enterprise_Catalog, PSH_RoomBooking, PSH_EnterCatag_Restaurant, PSH_RoomType, PSH_RoomsList, PSH_TourGuide, PSH_Safari, PSH_DeliveryAgent, PSH_Location

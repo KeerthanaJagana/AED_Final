@@ -88,12 +88,13 @@ public class FinalMainJFrame extends javax.swing.JFrame {
         uname = new javax.swing.JTextField();
         WorkArea = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginBtn.setText("Login");
@@ -137,7 +138,10 @@ public class FinalMainJFrame extends javax.swing.JFrame {
         WorkArea.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Zapfino", 1, 24)); // NOI18N
-        jLabel3.setText("Atlantis, The Palm Hotel");
+        jLabel3.setText("Atlantis,");
+
+        jLabel4.setFont(new java.awt.Font("Zapfino", 3, 24)); // NOI18N
+        jLabel4.setText(" The Palm Hotel");
 
         javax.swing.GroupLayout WorkAreaLayout = new javax.swing.GroupLayout(WorkArea);
         WorkArea.setLayout(WorkAreaLayout);
@@ -145,15 +149,19 @@ public class FinalMainJFrame extends javax.swing.JFrame {
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
                 .addGap(155, 155, 155)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         WorkAreaLayout.setVerticalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addGap(119, 119, 119)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jLabel4)
+                .addContainerGap(295, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(WorkArea);
@@ -701,6 +709,7 @@ public class FinalMainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginBtn;
